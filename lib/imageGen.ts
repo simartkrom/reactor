@@ -1,8 +1,8 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
 
-const FAL_API_KEY = process.env.FAL_API_KEY || '';
-const FAL_API_BASE = 'https://fal.run';
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY || '';
+const GEMINI_API_BASE = 'https://generativelanguage.googleapis.com/v1beta';
 
 export interface ImageGenerationResult {
   path: string;
@@ -13,21 +13,25 @@ export async function generateImage(
   prompt: string,
   outputPath: string
 ): Promise<ImageGenerationResult> {
-  // Using fal.ai's fast image generation model (similar to banana)
+  // Using Gemini Imagen 3 for image generation
   const response = await fetch(
-    `${FAL_API_BASE}/fal-ai/flux/schnell`,
+    `${GEMINI_API_BASE}/models/imagen-3.0-generate-002:predict?key=${GEMINI_API_KEY}`,
     {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Key ${FAL_API_KEY}`,
       },
       body: JSON.stringify({
-        prompt: prompt,
-        image_size: 'landscape_16_9',
-        num_inference_steps: 4,
-        num_images: 1,
-        enable_safety_checker: true,
+        instances: [
+          {
+            prompt: prompt,
+          },
+        ],
+        parameters: {
+          sampleCount: 1,
+          aspectRatio: '16:9',
+          safetyFilterLevel: 'block_few',
+        },
       }),
     }
   );
@@ -38,19 +42,14 @@ export async function generateImage(
   }
 
   const data = await response.json();
-  const imageUrl = data.images?.[0]?.url;
+  const imageData = data.predictions?.[0]?.bytesBase64Encoded;
 
-  if (!imageUrl) {
-    throw new Error('No image URL in response');
+  if (!imageData) {
+    throw new Error('No image data in response');
   }
 
-  // Download the image
-  const imageResponse = await fetch(imageUrl);
-  if (!imageResponse.ok) {
-    throw new Error(`Failed to download generated image: ${imageResponse.statusText}`);
-  }
-
-  const imageBuffer = Buffer.from(await imageResponse.arrayBuffer());
+  // Decode base64 and save
+  const imageBuffer = Buffer.from(imageData, 'base64');
 
   // Ensure directory exists
   await fs.mkdir(path.dirname(outputPath), { recursive: true });
@@ -69,6 +68,7 @@ export async function generateImagesParallel(
   const baseDir = `public/storage/images/${projectId}`;
   await fs.mkdir(baseDir, { recursive: true });
 
+  // Generate all images in parallel
   const results = await Promise.all(
     prompts.map(async (prompt, index) => {
       const outputPath = `${baseDir}/image_${index + 1}.png`;
