@@ -5,7 +5,15 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from clora.api import auth_router, chat_router, experts_router, knowledge_router, memories_router
+from clora.api import (
+    auth_router,
+    chat_router,
+    experts_router,
+    knowledge_router,
+    memories_router,
+    feedback_router,
+    content_router,
+)
 from clora.config import get_settings
 from clora.db.database import init_db
 
@@ -69,6 +77,8 @@ app.include_router(experts_router)
 app.include_router(chat_router)
 app.include_router(knowledge_router)
 app.include_router(memories_router)
+app.include_router(feedback_router)
+app.include_router(content_router)
 
 
 @app.get("/")
