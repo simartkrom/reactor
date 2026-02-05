@@ -92,7 +92,7 @@ export default function Home() {
       }
 
       // Images step
-      if (data.images.length >= 4) {
+      if ((data.images?.length || 0) >= 4) {
         newSteps[1].status = 'completed';
       } else if (data.currentStep === 'images') {
         newSteps[1].status = data.status === 'failed' ? 'error' : 'active';
@@ -188,7 +188,7 @@ export default function Home() {
     // Get completed steps to skip
     const skipSteps: string[] = [];
     if (project.script) skipSteps.push('script');
-    if (project.images.length >= 4) skipSteps.push('images');
+    if ((project.images?.length || 0) >= 4) skipSteps.push('images');
     if (project.audio) skipSteps.push('tts');
     if (project.video) skipSteps.push('video');
 
@@ -286,7 +286,7 @@ export default function Home() {
         )}
       </section>
 
-      {project && (project.script || project.images.length > 0 || project.audio || project.video) && (
+      {project && (project.script || (project.images?.length || 0) > 0 || project.audio || project.video) && (
         <section className="result-section">
           <h3 className="result-title">결과</h3>
 
@@ -297,11 +297,11 @@ export default function Home() {
             </div>
           )}
 
-          {project.images.length > 0 && (
+          {(project.images?.length || 0) > 0 && (
             <>
-              <h4 style={{ marginBottom: '1rem' }}>생성된 이미지 ({project.images.length}장)</h4>
+              <h4 style={{ marginBottom: '1rem' }}>생성된 이미지 ({project.images?.length || 0}장)</h4>
               <div className="images-grid">
-                {project.images.map((img, idx) => (
+                {(project.images || []).map((img, idx) => (
                   <div key={img.id} className="image-card">
                     <img src={getImageUrl(img.path)} alt={`Image ${idx + 1}`} />
                     <p>{img.prompt.substring(0, 100)}...</p>
