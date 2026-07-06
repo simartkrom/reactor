@@ -1,0 +1,146 @@
+export const questions = [
+  {
+    id: 1,
+    text: "오늘 아침 출근길, 나는?",
+    optionA: {
+      text: "“요즘 페이스가 꽤 안정적이다. 오늘도 이 리듬을 유지해 보자.”",
+      skill: "resilience_agility",
+    },
+    optionB: {
+      text: "“슬슬 새 프로젝트나 학습 거리로 신선한 자극을 한번 받아볼까.”",
+      skill: "curiosity_lifelong_learning",
+    },
+  },
+  {
+    id: 2,
+    text: "오전 업무 시작과 동시에 떨어진 데이터 취합 업무. 나의 업무 스타일은?",
+    optionA: {
+      text: "“이 작업을 단축할 단축키나 AI 도구가 있는지부터 살펴보자.”",
+      skill: "tech_literacy",
+    },
+    optionB: {
+      text: "“데이터는 정확성이 생명이지.” 익숙한 방식으로 한 건 한 건 꼼꼼히 마무리한다.",
+      skill: "analytical_thinking",
+    },
+  },
+  {
+    id: 3,
+    text: "사내에 새로 도입된 스마트 업무 시스템에 처음 접속했다.",
+    optionA: { text: "일단 직접 메뉴를 눌러 보며 기능을 익힌다.", skill: "tech_literacy" },
+    optionB: { text: "공지된 가이드와 튜토리얼부터 읽고 전체 구조를 먼저 파악한다.", skill: "systems_thinking" },
+  },
+  {
+    id: 4,
+    text: "팀 업무 프로세스에서 개선할 만한 작은 포인트를 발견했다.",
+    optionA: { text: "지금 맡은 메인 업무와 당면 목표에 우선 집중한다.", skill: "motivation_self_awareness" },
+    optionB: { text: "타 부서 협업에도 영향이 있을 수 있으니, 전체 흐름을 고려해 개선안을 메모해 둔다.", skill: "systems_thinking" },
+  },
+  {
+    id: 5,
+    text: "방대한 영문 리포트에서 핵심만 신속히 추출해야 한다면?",
+    optionA: { text: "리포트를 LLM에 올리고 프롬프트로 핵심을 빠르게 뽑아낸다.", skill: "ai_bigdata" },
+    optionB: { text: "“맥락은 내가 가장 잘 안다.” 목차를 훑다 떠오른 나만의 관점으로 핵심을 새롭게 엮어낸다.", skill: "creative_thinking" },
+  },
+  {
+    id: 6,
+    text: "예정된 회의가 갑자기 앞당겨졌다는 메신저 알림이 떴다.",
+    optionA: { text: "당황 없이 곧장 페이스를 끌어올려 회의실로 향한다.", skill: "resilience_agility" },
+    optionB: { text: "이동하는 동안 아젠다와 논의 포인트를 머릿속으로 정리해 둔다.", skill: "analytical_thinking" },
+  },
+  {
+    id: 7,
+    text: "회의 중, 타 부서 동료가 내 제안과는 결이 다른 접근을 제시했다.",
+    optionA: { text: "“저 입장에서는 그렇게 볼 수도 있겠다.” 우선 끝까지 열린 마음으로 듣는다.", skill: "empathy_active_listening" },
+    optionB: { text: "“저 제안의 근거는 무엇일까.” 듣는 동안 논리 구조와 타당성을 머릿속으로 점검한다.", skill: "analytical_thinking" },
+  },
+  {
+    id: 8,
+    text: "의견이 오가다 잠시 정적이 흐를 때, 나는?",
+    optionA: { text: "“이번엔 평소와 다른 방식으로 풀어 보면 어떨까요?” 새로운 시도를 먼저 제안한다.", skill: "creative_thinking" },
+    optionB: { text: "“지금까지 나온 의견을 정리해 보면 이 방향이 합리적입니다.” 합의의 기준이 될 만한 방향을 먼저 제시한다.", skill: "leadership_influence" },
+  },
+  {
+    id: 9,
+    text: "점심시간, 팀 단톡방에 '요즘 화제인 AI 툴 업무 적용 사례'가 공유되었다.",
+    optionA: { text: "흥미롭다. 식사 후 바로 내 환경에서 가볍게 직접 써 본다.", skill: "ai_bigdata" },
+    optionB: { text: "“우리 팀 어떤 프로세스에 적용할 수 있을까.” 도입 시 파급 효과부터 머릿속으로 그려 본다.", skill: "systems_thinking" },
+  },
+  {
+    id: 10,
+    text: "티타임 중, 동료가 최근 프로젝트에서 겪는 어려움을 조심스레 꺼냈다.",
+    optionA: { text: "“그런 고민이 있었군요.” 진심으로 공감하며 따뜻하게 격려해 준다.", skill: "empathy_active_listening" },
+    optionB: { text: "“이런 방식은 어때요?” 내 경험과 노하우를 바탕으로 도움이 될 만한 방법을 구체적으로 알려준다.", skill: "talent_development" },
+  },
+  {
+    id: 11,
+    text: "리프레시 겸 들어간 SKHU에서, 업무 관련 최신 트렌드 영상이 추천에 떴다.",
+    optionA: { text: "“요즘 이게 화제구나.” 호기심을 따라 가볍게 시청해 본다.", skill: "curiosity_lifelong_learning" },
+    optionB: { text: "좋은 자료다. 일단 북마크해 두고 지금 하던 업무로 돌아온다.", skill: "motivation_self_awareness" },
+  },
+  {
+    id: 12,
+    text: "오후 집중 시간, '신기술 도입 혁신 TF' 인원 모집 공지가 떴다.",
+    optionA: { text: "“성장의 기회다.” 새로운 도전으로 나만의 커리어를 만들 생각에 마음이 움직인다.", skill: "curiosity_lifelong_learning" },
+    optionB: { text: "“합류한다면 어떤 역량이 필요할까.” TF의 요구사항과 나의 강점을 차분히 매칭해 본다.", skill: "talent_development" },
+  },
+  {
+    id: 13,
+    text: "전사적으로 더 스마트한 협업을 위한 새 디지털 툴이 도입되었다.",
+    optionA: { text: "설치하자마자 숨은 기능과 단축키를 찾아내는 재미에 빠진다.", skill: "tech_literacy" },
+    optionB: { text: "기존 업무 리듬은 흔들지 않으면서, 새 도구에 단계적으로 익숙해진다.", skill: "resilience_agility" },
+  },
+  {
+    id: 14,
+    text: "중요한 팀 프로젝트 킥오프, 역할 조율에서 내가 더 강점을 발휘하는 쪽은?",
+    optionA: { text: "동료의 강점과 성향을 고려해 시너지가 날 만한 역할 배분을 제안한다.", skill: "talent_development" },
+    optionB: { text: "프로젝트가 매끄럽게 흘러가도록 일정을 설계하고 진척도를 직접 챙긴다.", skill: "leadership_influence" },
+  },
+  {
+    id: 15,
+    text: "집중 근무 시간, 동료가 어느 구간에서 막혀 고민하는 모습이 보인다.",
+    optionA: { text: "“이 부분은 이렇게 풀면 훨씬 수월해요.” 핵심 노하우를 명확하게 짚어 준다.", skill: "talent_development" },
+    optionB: { text: "“어떻게 접근하고 있어요?” 충분히 듣고, 스스로 답을 찾을 수 있는 질문을 건넨다.", skill: "empathy_active_listening" },
+  },
+  {
+    id: 16,
+    text: "유관 부서에서 참고하기 좋은 인사이트라며 새 통계 리포트를 공유해 주었다.",
+    optionA: { text: "“이런 흐름도 있구나.” 흥미를 가지고 빠르게 훑어본 뒤 북마크해 둔다.", skill: "ai_bigdata" },
+    optionB: { text: "“이 수치의 도출 기준은 무엇일까.” 신뢰할 만한 출처와 맥락부터 먼저 확인한다.", skill: "analytical_thinking" },
+  },
+  {
+    id: 17,
+    text: "중요한 자료 제출 직전, 잘 돌아가던 소프트웨어에 일시적인 오류가 발생했다.",
+    optionA: { text: "“일단 침착하자.” 상황을 정리한 뒤 IT 담당에 정확히 설명해 도움을 요청한다.", skill: "resilience_agility" },
+    optionB: { text: "“어떤 설정 문제일까.” 직접 검색해 가며 빠르게 트러블슈팅을 시도한다.", skill: "tech_literacy" },
+  },
+  {
+    id: 18,
+    text: "심혈을 기울인 기획안에 “방향성을 좀 더 트렌디하게 다듬어 보자”는 피드백을 받았다.",
+    optionA: { text: "방향은 잡혔다. 기존 뼈대는 살리고 내가 생각하는 트렌디 요소를 곧장 반영해 다음 버전을 완성한다.", skill: "creative_thinking" },
+    optionB: { text: "뻔한 수정보다는 새로운 영감을 얻기 위해 다양한 사례를 폭넓게 탐색한다.", skill: "curiosity_lifelong_learning" },
+  },
+  {
+    id: 19,
+    text: "마감 직전, 막판 스퍼트를 내던 동료가 다소 지친 기색을 보일 때, 나는?",
+    optionA: { text: "“잠시 숨 좀 돌리고 올까요?” 따뜻한 한마디로 먼저 긴장을 풀어 준다.", skill: "empathy_active_listening" },
+    optionB: { text: "“고지가 눈앞이에요. 이 파트는 제가 도울게요.” 분위기를 끌어올리며 실질적 도움을 건넨다.", skill: "leadership_influence" },
+  },
+  {
+    id: 20,
+    text: "퇴근을 앞둔 오후, 난이도는 높지만 성공 시 큰 임팩트를 낼 중요한 업무가 주어졌다.",
+    optionA: { text: "“쉽진 않아도 내 성장의 밑거름이 될 일이다.” 의미를 부여하며 도전적인 목표를 세운다.", skill: "motivation_self_awareness" },
+    optionB: { text: "“팀의 시너지를 발휘할 기회다.” 동료들과 어떻게 힘을 모을지 협업 방안부터 그려 본다.", skill: "leadership_influence" },
+  },
+  {
+    id: 21,
+    text: "하루가 마무리되어 갈 즈음, 다음 달 팀의 활력을 더해 줄 조직 문화 활동 아이디어를 낼 시간이다.",
+    optionA: { text: "“이번엔 좀 색다르게 가 볼까요?” 형식에 얽매이지 않은 새로운 아이디어를 제안한다.", skill: "creative_thinking" },
+    optionB: { text: "“지난 만족도 조사부터 다시 볼까요?” 구성원들의 선호 패턴을 데이터로 정리해 근거 있게 제안한다.", skill: "ai_bigdata" },
+  },
+  {
+    id: 22,
+    text: "기분 좋은 퇴근길, 내일 일정을 가볍게 머릿속으로 그려 본다.",
+    optionA: { text: "“오늘 하루도 수고했다. 내일도 한 걸음씩 목표를 향해 가 보자.”", skill: "motivation_self_awareness" },
+    optionB: { text: "“내일 오전엔 A 미팅, 오후엔 B 기획안 마무리.” 일정을 머릿속으로 미리 정렬한다.", skill: "systems_thinking" },
+  },
+];

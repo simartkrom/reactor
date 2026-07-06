@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'NanumSquare', system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  /* SK palette (from CMYK) */
+  --sk-red: #F5002F;    /* (0,100,81,4) */
+  --sk-orange: #FF5708; /* (0,66,97,0) */
+  --sk-yellow: #FFCC00; /* (0,20,100,0) */
+  --sk-white: #FFFFFF;
+
+  /* Dashboard neutrals */
+  --sk-ink: #070A12;
+  --sk-ink-2: #0B1020;
+  --sk-surface: rgba(12, 18, 35, 0.72);
+  --sk-border: rgba(148, 163, 184, 0.16);
+}
+
+/* Toss-like mobile UI defaults */
+html {
+  font-size: 18px;
+  scrollbar-gutter: stable;
+}
+
+/* NanumSquare webfont (preloaded woff2 for speed) */
+@font-face {
+  font-family: 'NanumSquare';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/npm/@noonnu/nanum-square@0.1.0/fonts/nanumsquare-300.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'NanumSquare';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/npm/@noonnu/nanum-square@0.1.0/fonts/nanumsquare-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'NanumSquare';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/npm/@noonnu/nanum-square@0.1.0/fonts/nanumsquare-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'NanumSquare';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/npm/@noonnu/nanum-square@0.1.0/fonts/nanumsquare-800.woff2') format('woff2');
+}
+
+body {
+  background: #f6f7f9;
+  color: #0b1220;
+  word-break: keep-all;
+  line-break: strict;
+  overflow-wrap: anywhere;
+}
+
+/* Key color roles (structure via color) */
+:root {
+  --key-primary: var(--sk-orange);
+  --key-danger: var(--sk-red);
+  --key-highlight: var(--sk-yellow);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+/* Main: CTA sequential reveal */
+@keyframes main-cta-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.97);
+    filter: brightness(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: brightness(1);
+  }
+}
+
+.main-cta-reveal {
+  animation: main-cta-reveal 0.52s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.main-cta-reveal-d0 {
+  animation-delay: 0ms;
+}
+.main-cta-reveal-d1 {
+  animation-delay: 0.07s;
+}
+.main-cta-reveal-d2 {
+  animation-delay: 0.14s;
+}
+.main-cta-reveal-d3 {
+  animation-delay: 0.21s;
+}
+.main-cta-reveal-d4 {
+  animation-delay: 0.28s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .main-cta-reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #1f2933 #020617;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #1f2933;
+  border-radius: 999px;
+}
